@@ -1,0 +1,14 @@
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="loadmore">
+    <view class="box" wx:for="{{img_url}}" wx:key="{{index}}" data-id="{{index+1}}" bindtap="jumptourl">
+        <view>
+            <image src="{{item}}" class="pic_url" height="200" />
+        </view>
+        <view class="info">
+            <view class="duration">{{item.duration}}</view><view class="categeory">#{{item.categeory}}</view>
+            <view class="title">{{item.title}}</view>
+        </view>
+    </view>
+</scroll-view>
+ <view>
+   <loading hidden="{{hidden}}">数据加载...</loading>
+ </view>
