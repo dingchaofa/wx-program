@@ -1,7 +1,7 @@
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="loadmore">
-    <view class="box" wx:for="{{img_url}}" wx:key="{{index}}" data-id="{{index+1}}" bindtap="jumptourl">
+    <view class="box" wx:for="{{source}}" wx:key="{{index}}" data-id="{{index+1}}" bindtap="jumptourl">
         <view>
-            <image src="{{item}}" class="pic_url" height="200" />
+            <image src="{{item.img_url}}" class="pic_url" height="200" />
         </view>
         <view class="info">
             <view class="duration">{{item.duration}}</view><view class="categeory">#{{item.categeory}}</view>

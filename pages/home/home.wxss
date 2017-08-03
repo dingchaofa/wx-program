@@ -1,0 +1,6 @@
+.box {
+    position:relative;
+}
+.pic_url {
+    width: 100%;
+}

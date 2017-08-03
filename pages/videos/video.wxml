@@ -1,0 +1,10 @@
+<view class="section tc">
+  <view class="videos">
+    <video id="myVideo" src="{{dataList.url}}" controls></video>
+  </view>
+  <view class="info">
+      <view class="duration">{{dataList.duration}}</view><view class="categeory">#{{dataList.categeory}}</view>
+      <view class="title">{{dataList.title}}</view>
+      <view class="describe">{{dataList.describe}}</view>
+  </view>
+</view>
