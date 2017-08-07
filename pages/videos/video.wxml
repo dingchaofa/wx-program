@@ -1,10 +1,19 @@
-<view class="section tc">
+<view class="section"  wx:for="{{source}}" wx:key="{{index}}" data-id="{{index+1}}">
   <view class="videos">
-    <video id="myVideo" src="{{dataList.url}}" controls></video>
+      <video id="myVideo" style="display:{{display}}" src="{{item.video_src}}" controls></video>
   </view>
-  <view class="info">
-      <view class="duration">{{dataList.duration}}</view><view class="categeory">#{{dataList.categeory}}</view>
-      <view class="title">{{dataList.title}}</view>
-      <view class="describe">{{dataList.describe}}</view>
+  <view class="top" bindtap="playVideo">
+      <image class="video_img1" src="{{item.video_img1}}"></image>
+      <view><image class="play_icon" src="../../images/play_icon.png"></image></view>
+      <view class="short_descript">
+        <image class="play-icon" src="../../images/play.png"></image>
+        <text class="duration">{{item.duration}}</text>
+        <text class="categeory">#{{item.category}}</text>
+      </view>
+  </view>
+  <view class="bottom" bindtap="cancelVideo">
+      <image class="video_img2" src="{{item.video_img2}}"></image>
+      <view class="title">{{item.title}}</view>
+      <view class="sub-title">{{item.sub_title}}</view>
   </view>
 </view>

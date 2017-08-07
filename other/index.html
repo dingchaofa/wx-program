@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .section {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        }
+        #myVideo {
+        display:none;
+        }
+        .top {
+        position: relative;
+        }
+        .short_descript {
+        position: absolute;
+        }
+        .play-icon {
+        width:20px;
+        height: 20px;
+        }
+        .video_img1 {
+        width: 100vw;
+        height: 60vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="section"  wx:for="{{source}}" wx:key="{{index}}" data-id="{{index+1}}">
+  <div class="videos">
+      <video id="myVideo" src="{{item.video_src}}" controls></video>
+  </div>
+  <div class="top" bindtap="playVideo">
+      <image class="video_img1" src="http://img.mukewang.com/59194c300001f2d606000338-240-135.jpg"></image>
+      <div class="short_descript">
+        <image class="play-icon" src="../images/play.png"></image>
+        <text class="duration">"00:59"</text>
+        <text class="categeory">#"奇酷360 N4产品视频"</text>
+      </div>
+  </div>
+  <div class="bottom">
+      <image class="video_img2" src="http://img.mukewang.com/59632b220001afe505960335-240-135.jpg"></image>
+      <div class="title">"雾，带给人们太多的遐想，又有太多的迷茫。"</div>
+      <div class="sub-title">"树，变成了是乳白色的影子。"</div>
+  </div>
+</div>
+</body>
+</html>

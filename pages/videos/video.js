@@ -1,46 +1,21 @@
-let videosList = [
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test3.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test5.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test3.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test5.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test3.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test5.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test3.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test5.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test4.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test1.mp4',
-  'http://demo.trendyactivity.com/ding/videos/test2.mp4',
-]
+const src = require('../../database/source.js')
+
 Page({
   data: {
-    dataList: {}
+    source: [],
+    display: 'none'
   },
   onLoad: function(options) {
         this.setData({
-          dataList:{
-            url: videosList[(options.id-1)]
-          }
+          source: [src.src[(options.id-1)]]
         })
+    },
+    playVideo: function(){
+      this.setData({
+        display: 'block'
+      })
+      this.videoContext = wx.createVideoContext('myVideo')
+        console.log(this.videoContext,'this.videoContext')
+        this.videoContext.play()
     }
 })
